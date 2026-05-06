@@ -16,7 +16,7 @@ import {
 
 const navLinks = [
   { label: "Doctors", href: "/find-doctor", icon: Stethoscope },
-
+ { label: "Prescription", href: "/prescription", icon: Pill },
   { label: "Medicines", href: "/medicines", icon: Pill },
   { label: "Lab Tests", href: "/tests", icon: FlaskConical },
   { label: "My Reports", href: "/reports", icon: FileText },
@@ -57,9 +57,9 @@ export default function Navbar() {
             <Button variant="ghost" size="sm">
               Sign in
             </Button>
-            <Button size="sm" className="shadow-sm">
-              Book Appointment
-            </Button>
+            <Link href={"/find-doctor"} onClick={() => setMenuOpen(false)}>
+              <Button className="w-full">Book Appointment</Button>
+            </Link>
           </div>
 
           {/* Mobile toggle */}

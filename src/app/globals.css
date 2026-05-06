@@ -131,3 +131,21 @@
     @apply font-sans;
   }
 }
+
+@media print {
+  nav,
+  footer,
+  .print\:hidden {
+    display: none !important;
+  }
+
+  body {
+    background: white !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  * {
+    box-shadow: none !important;
+  }
+}
