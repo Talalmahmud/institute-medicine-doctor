@@ -49,7 +49,7 @@ export default function Hero() {
           </div>
 
           {/* Search bar */}
-          <div className="max-w-2xl mx-auto">
+          {/* <div className="max-w-2xl mx-auto">
             <div className="flex items-center gap-2 bg-white border border-border rounded-2xl px-4 py-2 shadow-lg">
               <Search className="w-4 h-4 text-muted-foreground shrink-0" />
               <Input
@@ -65,11 +65,11 @@ export default function Hero() {
             <p className="text-xs text-muted-foreground mt-2">
               Popular: Cardiologist · Dermatologist · General Physician · Pediatrician
             </p>
-          </div>
+          </div> */}
         </div>
 
         {/* Stats row */}
-        <div className="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto">
+        {/* <div className="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto">
           {stats.map(({ icon: Icon, value, label }) => (
             <div
               key={label}
@@ -79,10 +79,12 @@ export default function Hero() {
                 <Icon className="w-5 h-5 text-primary" />
               </div>
               <span className="text-xl font-bold text-foreground">{value}</span>
-              <span className="text-xs text-muted-foreground text-center">{label}</span>
+              <span className="text-xs text-muted-foreground text-center">
+                {label}
+              </span>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   );

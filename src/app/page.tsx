@@ -11,7 +11,7 @@ export default function Home() {
     <main className="bg-background text-foreground">
       <Hero />
       {/* <Stats /> */}
-      <DoctorSection />
+      {/* <DoctorSection /> */}
       <FlowSteps />
       <ConsultationPanel />
       <Features />

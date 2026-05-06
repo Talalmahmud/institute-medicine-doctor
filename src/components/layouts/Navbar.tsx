@@ -11,14 +11,15 @@ import {
   Pill,
   FlaskConical,
   ShoppingBag,
+  FileText,
 } from "lucide-react";
 
 const navLinks = [
   { label: "Doctors", href: "/find-doctor", icon: Stethoscope },
-  { label: "Consultations", href: "#consultation", icon: Video },
-  { label: "Medicines", href: "#shop", icon: Pill },
-  { label: "Lab Tests", href: "#shop", icon: FlaskConical },
-  { label: "Shop", href: "#shop", icon: ShoppingBag },
+
+  { label: "Medicines", href: "/medicines", icon: Pill },
+  { label: "Lab Tests", href: "/tests", icon: FlaskConical },
+  { label: "My Reports", href: "/reports", icon: FileText },
 ];
 
 export default function Navbar() {
@@ -94,7 +95,9 @@ export default function Navbar() {
             <Button variant="outline" className="w-full">
               Sign in
             </Button>
-            <Button className="w-full">Book Appointment</Button>
+            <Link href={"/find-doctor"} onClick={() => setMenuOpen(false)}>
+              <Button className="w-full">Book Appointment</Button>
+            </Link>
           </div>
         </div>
       )}
