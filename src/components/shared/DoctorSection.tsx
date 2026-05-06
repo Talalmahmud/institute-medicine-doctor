@@ -1,8 +1,16 @@
 import DoctorCard from "./DoctorCard";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import type { Doctor } from "@/lib/doctors";
 
-const specialties = ["All", "Cardiologist", "Dermatologist", "Neurologist", "Pediatrician", "General Physician"];
+const specialties = [
+  "All",
+  "Cardiologist",
+  "Dermatologist",
+  "Neurologist",
+  "Pediatrician",
+  "General Physician",
+];
 
 const doctors = [
   {
@@ -16,6 +24,11 @@ const doctors = [
     followUp: 500,
     available: true,
     color: "bg-rose-500",
+    slug: "dr-rashida-alam",
+    qualifications: "MD, Board Certified Cardiologist",
+    hospital: "Dhaka Medical College Hospital",
+    availableDays: ["Monday", "Wednesday", "Friday"],
+    schedule: "9:00 AM - 5:00 PM",
   },
   {
     initials: "MH",
@@ -28,6 +41,11 @@ const doctors = [
     followUp: 600,
     available: true,
     color: "bg-primary",
+    slug: "dr-mehedi-hassan",
+    qualifications: "MD, Neurology Specialist",
+    hospital: "Bangabandhu Sheikh Mujib Medical University",
+    availableDays: ["Tuesday", "Thursday", "Saturday"],
+    schedule: "10:00 AM - 6:00 PM",
   },
   {
     initials: "SF",
@@ -40,6 +58,11 @@ const doctors = [
     followUp: 450,
     available: false,
     color: "bg-violet-500",
+    slug: "dr-sumaiya-faruk",
+    qualifications: "MD, Dermatology Fellow",
+    hospital: "Square Hospital",
+    availableDays: ["Monday", "Tuesday", "Thursday"],
+    schedule: "8:00 AM - 4:00 PM",
   },
   {
     initials: "KR",
@@ -52,16 +75,26 @@ const doctors = [
     followUp: 400,
     available: true,
     color: "bg-emerald-600",
+    slug: "dr-kamal-rahman",
+    qualifications: "MD, Pediatric Specialist",
+    hospital: "Apollo Hospitals Dhaka",
+    availableDays: ["Monday", "Wednesday", "Friday", "Saturday"],
+    schedule: "9:00 AM - 5:00 PM",
   },
 ];
 
 export default function DoctorSection() {
   return (
-    <section id="doctors" className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section
+      id="doctors"
+      className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto"
+    >
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
         <div>
-          <p className="text-sm font-medium text-primary mb-1">Our Specialists</p>
+          <p className="text-sm font-medium text-primary mb-1">
+            Our Specialists
+          </p>
           <h2 className="text-2xl sm:text-3xl font-bold text-foreground">
             Find the Right Doctor
           </h2>
@@ -93,7 +126,7 @@ export default function DoctorSection() {
       {/* Grid */}
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
         {doctors.map((doc, i) => (
-          <DoctorCard key={i} doctor={doc} />
+          <DoctorCard key={i} doctor={doc as Doctor} />
         ))}
       </div>
     </section>
